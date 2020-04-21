@@ -1,0 +1,36 @@
+html
+  head
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/styles.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+body
+ .container.login-container
+   .row
+     .col-md-6.login-form-1
+       form(method='POST' action='/login_lib')
+         h3 FOR LIBRARY AUTHORITY
+         .form-group
+           input.form-control(type='text', placeholder='Your Email *', name="Email")
+         .form-group
+           input.form-control(type='password', placeholder='Your Password *',name="Password" )
+         .form-group
+           input.btnSubmit(type='submit', value='Login')
+
+     .col-md-6.login-form-2
+       form(method='POST' action='/login')
+         .login-logo
+           img(src='https://image.ibb.co/n7oTvU/logo_white.png', alt='')
+         h3 FOR STUDENTS
+         .form-group
+           input.form-control(type='text', placeholder='Your Email *',name="Email")
+         .form-group
+           input.form-control(type='password', placeholder='Your Password *',name="Password" )
+         .form-group
+           input.btnSubmit(type='submit', value='Login')
+         .form-group
+           a.btnForgetPwd(href='/forgot_password', value='Login') Forget Password?
+         .form-group
+          a.btnForgetPwd.text-right(href='/register', value='Login') Don't have an account? Register here
+
+script(src="/bower_components/jquery/dist/jquery.js")  
+script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js") 

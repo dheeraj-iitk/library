@@ -1,0 +1,39 @@
+body
+nav.navbar.navbar-expand-lg.sticky-top.navbar-dark.bg-dark
+     a.navbar-brand LIBRARY
+     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+     #navbarNavDropdown.collapse.navbar-collapse
+          ul.navbar-nav
+           li.nav-item
+               span.sr-only (current)
+           li.nav-item.active
+              a.nav-link(href='/list_books') List of books
+            li.nav-item
+              a.nav-link(href='/new_arrivals_for_students') New Arrivals
+            li.nav-item
+              a.nav-link(href='/log_out') Log Out   
+            li#right  
+             form.form-inline.my-2.my-lg-0(method="GET",action='/search_books')
+               input.form-control.mr-sm-2(type='search', placeholder='Search Book Name', aria-label='Search',name="Book_Name")
+               button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+
+h1 list
+ img(alt='Wikipedia', src='data:image/png;base64,#{src}',width="40",height="40")
+ link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+ link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+ link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/styles.css')
+ br
+ br
+ table.table.table-fit.table.table-striped.table-dark.w-auto
+  thead
+    tr
+        th Book name
+        th Book publisher
+    
+     tbody
+      for book in list
+       tr
+          td #{book.Book_Name}
+             //img(alt='Wikipedia', src="data:image/png;base64,#{book.img.data}.toString("base64")",width="40",height="40")
+          td #{book.Book_Publisher}

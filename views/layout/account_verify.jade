@@ -1,0 +1,21 @@
+html
+  head
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/styles2.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+.sidenav
+  .login-main-text
+    h2
+      | Application
+      br
+      |  Register Page
+    p  register from here to access.
+.main
+  .col-md-6.col-sm-12
+   form(method='POST' action='/account_verify')
+    .login-form
+      form
+        .form-group
+          label Password
+          input.form-control(type='text', placeholder='Enter Password',name="Password")
+        button.btn.btn-secondary(type='submit') verify
